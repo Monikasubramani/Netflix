@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:#111;
+    color:white;
+}
+
+/* Navbar */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    z-index:1000;
+}
+
+.logo{
+    color:#e50914;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    background-image:url("https://images.unsplash.com/photo-1608889175154-53a01c1c07b5");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:60px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:500px;
+    margin-bottom:20px;
+    line-height:1.5;
+}
+
+.hero-buttons button{
+    padding:10px 20px;
+    border:none;
+    margin-right:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.play-btn{
+    background:white;
+    color:black;
+}
+
+.info-btn{
+    background:gray;
+    color:white;
+}
+
+/* Movie Rows */
+.row{
+    margin-top:20px;
+    padding:20px 40px;
+}
+
+.row h2{
+    margin-bottom:10px;
+}
+
+.row-posters{
+    display:flex;
+    overflow-x:auto;
+}
+
+.row-posters img{
+    width:200px;
+    margin-right:10px;
+    border-radius:4px;
+    transition:transform 0.3s;
+    cursor:pointer;
+}
+
+.row-posters img:hover{
+    transform:scale(1.1);
+}
+
+/* Scrollbar Hide */
+.row-posters::-webkit-scrollbar{
+    display:none;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:30px;
+    background:#000;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">NETFLIX</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Movies</a>
+        <a href="#">My List</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Stranger Things</h1>
+    <p>
+        When a young boy disappears, his mother, a police chief, and his friends 
+        confront terrifying supernatural forces.
+    </p>
+    <div class="hero-buttons">
+        <button class="play-btn">▶ Play</button>
+        <button class="info-btn">More Info</button>
+    </div>
+</div>
+
+<!-- Movie Rows -->
+<div class="row">
+    <h2>Trending Now</h2>
+    <div class="row-posters">
+        <img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/5P8SmMzSNYikXpxil6BYzJ16611.jpg">
+    </div>
+</div>
+
+<div class="row">
+    <h2>Top Rated</h2>
+    <div class="row-posters">
+        <img src="https://image.tmdb.org/t/p/w500/9O1Iy9od7fJYw0qY7Z8kM7rXUeG.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqoNMqPpPh8Y6I.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/6ELJEzQJ3Y45HczvreC3dg0GV5R.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg">
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>Netflix Clone © 2026</p>
+</div>
+
+<script>
+// Simple navbar background change on scroll
+window.addEventListener("scroll", function(){
+    const navbar = document.querySelector(".navbar");
+    if(window.scrollY > 50){
+        navbar.style.background = "#111";
+    } else {
+        navbar.style.background = "linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)";
+    }
+});
+</script>
+
+</body>
+</html>
